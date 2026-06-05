@@ -1,97 +1,45 @@
-*{
-  margin:0;
-  padding:0;
-  box-sizing:border-box;
-}
+// Feature Animation
 
-body{
-  font-family:'Poppins',sans-serif;
-  background:#0f172a;
-  color:white;
-}
+const cards = document.querySelectorAll(".feature-card");
 
-a{
-  text-decoration:none;
-}
+window.addEventListener("scroll", () => {
+  cards.forEach((card) => {
+    const cardTop = card.getBoundingClientRect().top;
 
-.navbar{
-  display:flex;
-  justify-content:space-between;
-  align-items:center;
-  padding:20px 8%;
-  position:fixed;
-  width:100%;
-  top:0;
-  z-index:1000;
-  background:rgba(15,23,42,0.9);
-  backdrop-filter:blur(10px);
-}
+    if (cardTop < window.innerHeight - 100) {
+      card.style.opacity = "1";
+      card.style.transform = "translateY(0)";
+    }
+  });
+});
 
-.logo{
-  font-size:1.5rem;
-  font-weight:700;
-  color:#38bdf8;
-}
+cards.forEach((card) => {
+  card.style.opacity = "0";
+  card.style.transform = "translateY(30px)";
+  card.style.transition = "all .6s ease";
+});
 
-.nav-links{
-  display:flex;
-  list-style:none;
-  gap:30px;
-}
+// FAQ
 
-.nav-links a{
-  color:white;
-}
+const faqQuestions = document.querySelectorAll(".faq-question");
 
-.btn{
-  background:#38bdf8;
-  color:white;
-  padding:10px 20px;
-  border-radius:8px;
-}
+faqQuestions.forEach((question) => {
+  question.addEventListener("click", () => {
+    const answer = question.nextElementSibling;
 
-.hero{
-  min-height:100vh;
-  display:flex;
-  justify-content:center;
-  align-items:center;
-  text-align:center;
-  padding:0 20px;
-}
+    if (answer.style.maxHeight) {
+      answer.style.maxHeight = null;
+    } else {
+      answer.style.maxHeight = answer.scrollHeight + "px";
+    }
+  });
+});
+const form = document.querySelector(".contact-form");
 
-.hero-content{
-  max-width:800px;
-}
+form.addEventListener("submit", (e) => {
+  e.preventDefault();
 
-.hero h1{
-  font-size:4rem;
-  margin-bottom:20px;
-}
+  alert("Thank you! Your message has been received.");
 
-.hero p{
-  color:#cbd5e1;
-  font-size:1.1rem;
-  line-height:1.8;
-}
-
-.hero-buttons{
-  margin-top:30px;
-}
-
-.primary-btn,
-.secondary-btn{
-  display:inline-block;
-  padding:14px 28px;
-  border-radius:10px;
-  margin:10px;
-}
-
-.primary-btn{
-  background:#38bdf8;
-  color:white;
-}
-
-.secondary-btn{
-  border:1px solid #38bdf8;
-  color:#38bdf8;
-}
+  form.reset();
+});
