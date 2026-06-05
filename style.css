@@ -116,8 +116,9 @@ ul{
 }
 
 .hero h1{
-    font-size:5rem;
+    font-size:4rem;
     font-weight:700;
+    line-height:1.2;
 }
 
 .hero h1 span{
@@ -361,7 +362,7 @@ ul{
 ========================= */
 
 .how-it-works{
-    padding:100px 8%;
+    padding:80px 8%;
 }
 
 .steps-container{
@@ -434,7 +435,7 @@ ul{
 ========================= */
 
 .pricing{
-    padding:100px 8%;
+    padding:80px 8%;
 }
 
 .pricing-grid{
@@ -504,6 +505,7 @@ ul{
 .featured{
     border:2px solid #38bdf8;
     transform:scale(1.05);
+    box-shadow:0 0 30px rgba(56,189,248,0.25); 
 }
 
 .popular{
@@ -528,7 +530,7 @@ ul{
 ========================= */
 
 .testimonials{
-    padding:100px 8%;
+    padding:80px 8%;
 }
 
 .testimonial-grid{
@@ -571,7 +573,7 @@ ul{
 ========================= */
 
 .faq{
-    padding:100px 8%;
+    padding:80px 8%;
 }
 
 .faq-container{
@@ -611,7 +613,7 @@ ul{
 ========================= */
 
 .contact{
-    padding:100px 8%;
+    padding:80px 8%;
 }
 
 .contact-form{
@@ -623,19 +625,10 @@ ul{
     gap:20px;
 }
 
-.contact-form input,
-.contact-form textarea{
-    background:rgba(255,255,255,0.05);
-
-    border:1px solid rgba(255,255,255,0.1);
-
-    color:white;
-
-    padding:18px;
-
-    border-radius:12px;
-
-    outline:none;
+.contact-form input:focus,
+.contact-form textarea:focus{
+    border-color:#38bdf8;
+    box-shadow:0 0 15px rgba(56,189,248,0.2);
 }
 
 .contact-form button{
@@ -690,6 +683,11 @@ ul{
 
 .footer-links a{
     color:white;
+    transition:0.3s;
+}
+
+.footer-links a:hover{
+    color:#38bdf8;
 }
 
 .copyright{
@@ -706,4 +704,61 @@ section{
 .testimonial-card{
     -webkit-backdrop-filter:blur(12px);
     backdrop-filter:blur(12px);
+}
+
+/* ===== FINAL UI POLISH ===== */
+
+.nav-links a{
+    position:relative;
+}
+
+.nav-links a::after{
+    content:"";
+    position:absolute;
+    left:0;
+    bottom:-5px;
+    width:0;
+    height:2px;
+    background:#38bdf8;
+    transition:0.3s;
+}
+
+.nav-links a:hover::after{
+    width:100%;
+}
+
+.primary-btn:hover,
+.secondary-btn:hover,
+.price-btn:hover,
+.contact-form button:hover{
+    box-shadow:0 0 25px rgba(56,189,248,0.4);
+}
+
+.faq-question{
+    transition:0.3s;
+}
+
+.faq-question:hover{
+    border:1px solid #38bdf8;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus{
+    border-color:#38bdf8;
+    box-shadow:0 0 15px rgba(56,189,248,0.2);
+}
+
+.footer-links a{
+    transition:0.3s;
+}
+
+.footer-links a:hover{
+    color:#38bdf8;
+}
+
+.feature-card,
+.step-card,
+.price-card,
+.testimonial-card{
+    transition:all 0.3s ease;
 }
