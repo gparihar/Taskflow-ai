@@ -625,6 +625,22 @@ ul{
     gap:20px;
 }
 
+.contact-form input,
+.contact-form textarea{
+    background:rgba(255,255,255,0.05);
+    border:1px solid rgba(255,255,255,0.1);
+    color:white;
+    padding:18px;
+    border-radius:12px;
+    outline:none;
+    font-family:'Poppins',sans-serif;
+}
+
+.contact-form input::placeholder,
+.contact-form textarea::placeholder{
+    color:#94a3b8;
+}
+
 .contact-form input:focus,
 .contact-form textarea:focus{
     border-color:#38bdf8;
